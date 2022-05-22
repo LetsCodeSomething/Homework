@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Простой чат</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="chat.js"></script>
+</head>
+<body onload="getMessages()">
+    <div class="wrapper">
+        <div class="logo">
+            Простой чат
+        </div>
+        <div class="loginform" id="loginform">
+            <div>Логин:</div>
+            <input type="text" id="user">
+            <div>Пароль:</div>
+            <input type="text" id="password">
+            <div>Сообщение:</div>
+            <input type="text" id="message">
+            <div><input type="button" onclick="processMessage()" value="Отправить сообщение"></div>
+            <div class="error-message" id="error-message"></div>
+        </div>
+        <div class="chatform" id="chatform"></div>
+    </div>
+</body>
+</html>
