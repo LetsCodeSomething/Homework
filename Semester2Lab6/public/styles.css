@@ -1,0 +1,17 @@
+.wrapper {
+    width: 50%;
+    height: calc(100vh / 2);
+    margin: auto;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+}
