@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Награда за посещение</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+{% if keycheck %}
+    <div class="wrapper" style="background-color:#4a8500;">
+        <div>Вы забрали награду, спасибо за посещение!</div>
+    </div>
+{% else %}
+    <div class="wrapper" style="background-color:#ff0000;">
+        <div>Простите, но ключ неправильный. Награда не выдана.</div>
+    </div>
+{% endif %}
+</body>
+</html>

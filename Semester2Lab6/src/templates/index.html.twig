@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Счётчик посещений</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    {% if viewscount % 10 == 0 %}
+        <div class="wrapper" style="background-color:#a2e423;">
+            <div>Вы являетесь посетителем № {{viewscount}}!</div>
+            <div>Ваш номер посетителя кратен 10!</div>
+            <a href="reward.php?key=potato">ЗАБРАТЬ НАГРАДУ</a>
+        </div>
+    {% else %}
+        <div class="wrapper" style="background-color:#e4cc99;">
+            <div>Вы являетесь посетителем № {{viewscount}}!</div>
+            <div>Ваш номер посетителя не кратен 10, но скоро и вам повезёт!</div>
+        </div>
+    {% endif %}
+</body>
+</html>
