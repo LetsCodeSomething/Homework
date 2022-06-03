@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>СЗБД</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">СЗБД</div>
+        <div class="block">Добро пожаловать в СЗБД - Систему Засорения Базы Данных! Каждый желающий может внести вклад в
+        засорение - для этого достаточно заполнить форму и нажать на кнопку "Отправить".<br> <i>Послание юзеру:
+        удаление не предусмотрено, поэтому что добавлено в базу, то там и останется.
+        Не отправляйте сюда какие-нибудь ценные данные.</i></div>
+        <div class="block">
+            <div class="control-wrapper"><label>Ник: </label></div>
+            <div class="control-wrapper"><input type="text" id="usernameTextBox" class="control"></div>
+            <div class="control-wrapper"><label>Сообщение: </label></div>
+            <div class="control-wrapper"><input type="text" id="messageTextBox" class="control"></div>
+            <div class="control-wrapper"><input type="button" id="sendButton" value="Отправить" onclick="sendMessage()"></div>
+            <div class="error-message" id="errorMessageText"></div>
+        </div>
+        <div class="block">
+            <div class="table" id="table">
+                <div class="table-header">
+                    <div class="table-cell">Ник</div>
+                    <div class="table-cell">Сообщение</div>
+                </div>
+                {% for raw in data %}
+                    {% if loop.index % 2 == 0 %}
+                        <div class="table-row-even">
+                            <div class="table-cell">{{raw.username}}</div>
+                            <div class="table-cell">{{raw.message}}</div>
+                        </div>
+                    {% else %}
+                        <div class="table-row-odd">
+                            <div class="table-cell">{{raw.username}}</div>
+                            <div class="table-cell">{{raw.message}}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
