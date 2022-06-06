@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Склад деталей</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body onload="processBodyLoad()">
+    <div class="wrapper">
+        <div class="logo">Склад деталей</div>
+        <div class="block">Добро пожаловать в панель управления складом деталей.<br>
+        Данная панель поддерживает добавление, удаление и поиск деталей по заданным параметрам.</div>
+        <div class="block">
+            <div class="control-wrapper"><label>Режим:</label></div>
+            <div class="control-wrapper">
+                <select class="control" id="modeComboBox" onchange="processModeChange()">
+                    <option>Добавление</option>
+                    <option>Удаление</option>
+                    <option>Поиск по параметру</option>
+                </select>
+            </div>
+            <div class="control-wrapper"><label id="idLabel">ID:</label></div>
+            <div class="control-wrapper"><input type="text" id="idTextBox" class="control"></div>
+            <div class="control-wrapper"><label id="nameLabel">Название:</label></div>
+            <div class="control-wrapper"><input type="text" id="nameTextBox" class="control"></div>
+            <div class="control-wrapper"><label id="descriptionLabel">Описание:</label></div>
+            <div class="control-wrapper"><input type="text" id="descriptionTextBox" class="control"></div>
+            <div class="control-wrapper"><label id="materialLabel">Материал:</label></div>
+            <div class="control-wrapper"><input type="text" id="materialTextBox" class="control"></div>
+            <div class="control-wrapper"><label id="findLabel" hidden="hidden">Параметр поиска:</label></div>
+            <div class="control-wrapper">
+                <select class="control" id="findComboBox" hidden="hidden" onchange="processFindChange()">
+                    <option>ID</option>
+                    <option>Название</option>
+                    <option>Описание</option>
+                    <option>Материал</option>
+                </select>
+            </div>
+            <div class="control-wrapper"><label id="findParamLabel" hidden="hidden">Значение:</label></div>
+            <div class="control-wrapper"><input type="text" id="findParamTextBox" class="control" hidden="hidden"></div>
+            <div class="control-wrapper"><input type="button" id="resetButton" class="control" value="Сбросить результаты" onclick="processResetButtonClick()" hidden="hidden"></div>
+            <div class="control-wrapper"><input type="button" id="submitButton" class="control" value="Добавить деталь" onclick="processButtonClick()"></div>
+            <div class="error-message" id="errorMessageLabel"></div>
+        </div>
+        <div class="block">
+            <div class="table" id="table">
+                {% block table %}
+                <div class="table-header">
+                    <div class="table-cell">ID</div>
+                    <div class="table-cell">Название</div>
+                    <div class="table-cell">Описание</div>
+                    <div class="table-cell">Материал</div>
+                </div>
+                {% for raw in components %}
+                    {% if loop.index % 2 == 0 %}
+                        <div class="table-row-even">
+                            <div class="table-cell">{{raw.id}}</div>
+                            <div class="table-cell">{{raw.name}}</div>
+                            <div class="table-cell">{{raw.description}}</div>
+                            <div class="table-cell">{{raw.material}}</div>
+                        </div>
+                    {% else %}
+                        <div class="table-row-odd">
+                            <div class="table-cell">{{raw.id}}</div>
+                            <div class="table-cell">{{raw.name}}</div>
+                            <div class="table-cell">{{raw.description}}</div>
+                            <div class="table-cell">{{raw.material}}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% endblock table %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
