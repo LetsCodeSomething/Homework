@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в систему</title>
+    <link href="styles/index.css" rel="stylesheet">
+    <script src="js/index.js"></script>
+</head>
+<body onload="processPageLoad()">
+    <div class="wrapper">
+        <div class="login-lable">Вход в систему</div>
+        <div class="login-form">
+            <form action="/" method="post">
+                <div class="lable">Имя пользователя:</div>
+                <input type="text" class="textbox" id="loginTextBox" oninput="processTextChange()" name="login">
+                <div class="lable">Пароль:</div>
+                <input type="password" class="textbox" id="passwordTextBox" oninput="processTextChange()" name="password">
+                <div class="control-wrapper">
+                    <input type="submit" class="button" value="Войти" disabled="disabled" id="loginButton">
+                </div>
+                <div class="error-lable">{{errorMessage}}</div>
+                <div class="register-lable"><a href="/register_user_profile.php">Зарегистрироваться</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
