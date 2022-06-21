@@ -1,0 +1,133 @@
+.wrapper {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-form {
+    width: 300px;
+    height: 250px;
+    min-width: 300px;
+    min-height: 250px;
+    margin-top: 10px;
+    margin-bottom: 110px;
+
+    background-color: #ececec;
+    border: solid 2px #d3d3d3;
+    border-radius: 6px;
+}
+
+.register-lable {
+    width: 300px;
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.lable {
+    width: 100%;
+    height: 20px;
+    font-family: Arial;
+    padding: 10px;
+}
+
+.textbox {
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    min-height: 20px;
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.textbox:focus {
+    border-color: #00afff;
+    box-shadow: 0 0 2px #00afff;
+}
+
+.error-lable {
+    width: 100%;
+    height: 20px;
+    font-family: Arial;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.control-wrapper {
+    width: 95%;
+    min-height: 70px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #25e525;
+    color: white;
+    border: solid 2px #0ccb0c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    height: 30px;
+    width: 100%;
+}
+
+.button:hover {
+    box-shadow: 0 0 6px #25e525;
+}
+
+.button:active {
+    background-color: #13a613;
+}
+
+.button:disabled {
+    background-color: #ececec;
+    border: solid 2px #6c6c6c;
+    color: black;
+    box-shadow: none;
+}
+
+.red-button {
+    background-color: #ececec;
+    color: black;
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    height: 30px;
+    width: 100%;
+}
+
+.red-button:hover {
+    color: white;
+    background-color: #e52525;
+    box-shadow: 0 0 6px #e52525;
+}
+
+.red-button:active {
+    background-color: #a61313;
+}
+
+.red-button:disabled {
+    background-color: #ececec;
+    border: solid 2px #6c6c6c;
+    color: black;
+    box-shadow: none;
+}
