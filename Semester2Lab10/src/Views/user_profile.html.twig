@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link href="styles/user_profile.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="profile-lable">Профиль</div>
+        <div class="profile-form">
+            <div class="lable">Добро пожаловать, {{login}}!</div>
+            <div class="lable"></div>
+            <div class="lable"></div>
+            <form action="/logout.php" method="post">
+                <div class="control-wrapper">
+                    <input type="submit" class="button" value="Выйти" id="logoutButton">
+                </div>
+            </form>
+            <form action="/delete_user_profile.php" method="post">
+                <div class="control-wrapper">
+                    <input type="submit" class="red-button" value="Удалить профиль" id="deleteButton">
+                </div>
+                <input type="text" class="hidden-textbox" value="{{login}}" name="login">
+                <input type="text" class="hidden-textbox" value="{{token}}" name="token">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
