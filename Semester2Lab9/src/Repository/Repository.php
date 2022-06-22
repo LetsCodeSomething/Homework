@@ -32,7 +32,7 @@ class Repository
                 $componentsArr[] = $component;
                 return $componentsArr;
             }
-        }
+        } 
 
         return null;
     }
