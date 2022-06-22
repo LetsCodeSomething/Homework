@@ -10,7 +10,7 @@ class DataMapper
 
     public function __construct()
     {
-        $this->connection = new \PDO("mysql:host=localhost;dbname=app8", "app8user", "almightybanana");
+        $this->connection = new \PDO("mysql:host=localhost;dbname=app8", "app8user", "*****");
     }
 
     public function getAllComponents() : ?array
