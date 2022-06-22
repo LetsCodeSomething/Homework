@@ -50,4 +50,4 @@ class DataMapper
         $query = $this->connection->prepare("delete from app8.component where id = $id");
         $query->execute();
     }
-}
+} 
